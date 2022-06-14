@@ -6,8 +6,6 @@ import com.stayshubh.blogapp.backend.exception.ResourceNotFoundException;
 import com.stayshubh.blogapp.backend.repository.PostRepository;
 import com.stayshubh.blogapp.backend.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,12 +46,6 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto getPostById(long id) {
         Post post = postRepository.findById(id).orElseThrow(()-> new ResourceNotFoundException("Post", "id", id));
-        return mapToDto(post);
-    }
-
-    @Override
-    public PostDto getPostBySlug(String slug) {
-        Post post = postRepository.findBySlug(slug);
         return mapToDto(post);
     }
 
