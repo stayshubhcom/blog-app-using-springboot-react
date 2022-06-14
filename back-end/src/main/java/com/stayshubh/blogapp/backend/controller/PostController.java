@@ -38,12 +38,6 @@ public class PostController {
         return ResponseEntity.ok(postService.getPostById(id));
     }
 
-    //get post by slug
-    @GetMapping("/{slug}")
-    public ResponseEntity<PostDto> getPostById(@PathVariable(name = "slug") String slug){
-        return ResponseEntity.ok(postService.getPostBySlug(slug));
-    }
-
     //update post by id
     @PutMapping({"/{id}"})
     public ResponseEntity<PostDto> updatePostById(@RequestBody PostDto postDto, @PathVariable(name = "id") Long id){

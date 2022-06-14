@@ -12,8 +12,6 @@ public interface PostService {
 
     PostDto getPostById(long id);
 
-    PostDto getPostBySlug(String slug);
-
     PostDto updatePostById(PostDto postDto, Long id);
 
     void deletePostById(Long id);
